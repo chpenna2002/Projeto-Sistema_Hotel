@@ -36,7 +36,6 @@ class Hospedagem < Hospede
     end
   end
 end
-
 hospd1 = Hospedagem.new
 hospd1.cadastrarEntrada('202', '20202020', '233', '2', 'Jorge') 
 #hospd1.consultarHospedagem('202', 'Jorge')
