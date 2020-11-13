@@ -30,7 +30,7 @@ class Funcionario < Quarto
   puts $h[$i]
   $i = $i + 1
 
- 
+  
 
   end
 
@@ -49,9 +49,25 @@ class Funcionario < Quarto
     @@numero_andar = andar
   end
 
+  def cadastraHospede(nome, cpf, rg, endereco, telefone, data)
+    @@nomePessoa = nome
+    @@cpfPessoa = cpf
+    @@rgPessoa = rg 
+    @@enderecoPessoa = endereco
+    @@telefonePessoa = telefone
+    @@dataNascimento = data 
+
+    $h.push(Hash[nome: @@nomePessoa,cpf:@@cpfPessoa, endereco:@@enderecoPessoa, telefone:@@telefonePessoa, data:@@dataNascimento])
+
+    puts $h[$i]
+    $i = $i + 1
+  end
+
 end
 
 func1 = Funcionario.new
 func1.cadastrarFuncionario("20102020", "Porteiro", 2000, "2")
+func1.cadastrarQuarto(0)
+func1.cadastraHospede(0)
 func1.excluiCadastro(0)
 
