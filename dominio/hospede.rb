@@ -25,7 +25,7 @@ class Hospede < Pessoa
     puts "Valor da despesas: #{@total}"
   end
 
-  def pagarValor
+  def pagarDespesas
   @total = 0
   puts "Valor da despesas: #{@total}"
   end
@@ -36,4 +36,4 @@ end
 hosp1 = Hospede.new
 hosp1.cadastraHospede("Jorge", "123","Mg-SJj", "Rua A", "666", "2020")
 hosp1.contaHospede(200)
-hosp1.pagarValor
+hosp1.pagarDespesas
