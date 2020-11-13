@@ -1,3 +1,4 @@
+Equipe: Carlos, Jorge, Pedro Otávio.
 Descrição:
 
   Este breve resumo descreve o sistema em questão que está sendo desenvolvindo. Sua função é gerenciar reservas e ocupações de apartamentos de uma rede de hotéis. Em cada hotel, terá um ou mais terminais para controlar os serviços internos e de comunicação.
