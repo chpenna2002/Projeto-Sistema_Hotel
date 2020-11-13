@@ -67,7 +67,5 @@ end
 
 func1 = Funcionario.new
 func1.cadastrarFuncionario("20102020", "Porteiro", 2000, "2")
-func1.cadastrarQuarto(0)
-func1.cadastraHospede(0)
 func1.excluiCadastro(0)
 
