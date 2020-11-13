@@ -7,3 +7,7 @@ Descrição:
  Links de acesso:
  
  docs: https://github.com/chpenna2002/Projeto-Sistema_Hotel/tree/main/docs
+ 
+ dominio: https://github.com/chpenna2002/Projeto-Sistema_Hotel/tree/main/dominio
+ 
+ testes: https://github.com/chpenna2002/Projeto-Sistema_Hotel/tree/main/testes
