@@ -1,84 +1,42 @@
-class hospedagem
-  
-  attr_accessor :hospede, :numeroQuarto,
-  :dataEntrada,
-  :dataSaida,
-  :valorHospedagem, 
-  :numeroHospedes
+require './hospede'
+class Hospedagem < Hospede
+  @numeroQuarto = nil
+  @dataEntrada = nil
+  @dataSaida = nil
+  @valorHospedagem = nil
+  @numeroHospedes = nil
+  @e = Hash[]
+  @s = Hash[]
+  def cadastrarEntrada(nmQuarto, dtEnt, valor, numeroHospedes, hospedeTitular)
+    @numeroQuarto = nmQuarto
+    @dataEntrada = dtEnt
+    @valorHospedagem = valor
+    @numeroHospedes = numeroHospedes
+    @hospede = hospedeTitular
 
-  def cadastraEntrada
-            arquivo = []
-        arquivo << puts
-        arquivo << "#{Time.new}"
-        arquivo << "Hospede: #{@hospede}".upcase
-        arquivo << "Quarto: #{@numeroQuarto}".upcase
-        arquivo << "Data de Entrada: #{@dataEntrada}".upcase
-        arquivo << "Numero de hospedes: #{@numeroHospedes}".upcase
-        
-        
-        arquivo << "********************"
-        arquivo << puts
-
-
-        x = File.open("Agendamentos.txt", "a+")
-        x.puts(arquivo)
-        x.close
-
-        puts "Dados registrados:"
-        puts arquivo
-        sleep 2
+    @e = Hash[numeroQuarto: @numeroQuarto, dataEntrada: @dataEntrada, valorHospedagem: @valorHospedagem, numeroHospedes: @numeroHospedes]
+    puts "cadastro Entrada concluido, #{@e}" 
   end
 
-    
- def cadastraSaida
-            arquivo = []
-        arquivo << puts
-        arquivo << "#{Time.new}"
-        arquivo << "Hospede: #{@hospede}".upcase
-        arquivo << "Quarto: #{@numeroQuarto}".upcase
-        arquivo << "Data de Saida: #{@dataSaida}".upcase
+  def cadastrarSaida(nmQuarto, dtSaida, _valor)
+    @numeroQuarto = nmQuarto
+    @dataSaida = dtSaida
+    @valorHospedagem = valor
 
-        
-        
-        arquivo << "********************"
-        arquivo << puts
-
-
-        x = File.open("Agendamentos.txt", "a+")
-        x.puts(arquivo)
-        x.close
-
-        puts "Dados registrados:"
-        puts arquivo
-        sleep 2
+    @valor = hosp1.contaHospede(200)
+    @s = Hash[numeroQuarto: @numeroQuarto, dataEntrada: @dataSaida, valorHospedagem: @valorHospedagem ] 
+   puts "cadastro Saida concluido, #{@s}"  
   end
-
-  def registrarConsumo(valor)
-        arquivo = []
-        arquivo << puts
-        arquivo << "#{Time.new}"
-        arquivo << "Hospede: #{@hospede}".upcase
-        arquivo << "Quarto: #{@numeroQuarto}".upcase
-        arquivo << "Valor: #{@valor}".upcase
-
-        
-        
-        arquivo << "********************"
-        arquivo << puts
-
-
-        x = File.open("Valores.txt", "a+")
-        x.puts(arquivo)
-        x.close
-
-        puts "Dados registrados:"
-        puts arquivo
-        sleep 2
-  end 
 
   def consultarHospedagem(numeroQuarto, hospede)
-        File.open("Agendento.txt", "r+") do |file|
-        puts file.read 
+    @numeroQuarto = numeroQuarto
+    @hospede = hospede
+    if (@e.include? @numeroQuarto)
+      puts 'cadastrado'
+    end
   end
 end
-end
+
+hospd1 = Hospedagem.new
+hospd1.cadastrarEntrada('202', '20202020', '233', '2', 'Jorge') 
+#hospd1.consultarHospedagem('202', 'Jorge')
