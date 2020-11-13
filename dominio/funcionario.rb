@@ -30,7 +30,7 @@ class Funcionario < Quarto
   puts $h[$i]
   $i = $i + 1
 
-  
+ 
 
   end
 
